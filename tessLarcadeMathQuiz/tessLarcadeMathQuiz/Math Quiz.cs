@@ -39,6 +39,11 @@ namespace tessLarcadeMathQuiz
          */
         public void StartTheQuiz()
         {
+            //date calculation
+
+            DateTime dateToday = DateTime.Now.Date;
+            Today.Text = dateToday.ToString("MM/dd/yyyy");
+
             Console.WriteLine("StartTheQuiz");
             //add numerical values to the addition problem.
             addend1 = randomizer.Next(51);

@@ -1,0 +1,10 @@
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\bin\Debug\tessLarcadeMathQuiz.exe.config
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\bin\Debug\tessLarcadeMathQuiz.exe
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\bin\Debug\tessLarcadeMathQuiz.pdb
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.csprojResolveAssemblyReference.cache
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.Form1.resources
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.Properties.Resources.resources
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.csproj.GenerateResource.Cache
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.csproj.CoreCompileInputs.cache
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.exe
+C:\Users\Tess\source\repos\tessLarcadeMathQuiz\tessLarcadeMathQuiz\obj\Debug\tessLarcadeMathQuiz.pdb

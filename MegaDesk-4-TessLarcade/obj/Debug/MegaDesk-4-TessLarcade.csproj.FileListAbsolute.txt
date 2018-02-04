@@ -1,0 +1,14 @@
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk-4-TessLarcade.csprojResolveAssemblyReference.cache
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.AddQuote.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.DisplayQuote.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.MainMenu.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.Properties.Resources.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.SearchQuotes.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk_4_TessLarcade.ViewAllQuotes.resources
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk-4-TessLarcade.csproj.GenerateResource.Cache
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk-4-TessLarcade.csproj.CoreCompileInputs.cache
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\bin\Debug\MegaDesk-4-TessLarcade.exe.config
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\bin\Debug\MegaDesk-4-TessLarcade.exe
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\bin\Debug\MegaDesk-4-TessLarcade.pdb
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk-4-TessLarcade.exe
+C:\Users\Tess\source\repos\MegaDesk-4-TessLarcade\MegaDesk-4-TessLarcade\obj\Debug\MegaDesk-4-TessLarcade.pdb

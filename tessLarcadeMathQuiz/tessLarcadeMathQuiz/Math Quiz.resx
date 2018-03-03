@@ -120,4 +120,32 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>18, 17</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAD///////////////////////////7+/v//////8fHt/+Lj2////////Pz8////////////////////
+        ///////////////////////////////////19vT/ztTS/9jauP+4vXj/3+Pm/9fc1P///////v79////
+        ///////////////////////////////////+/v7//////3SUdv+Zpkr/rLEu/2iKZP/W39T///////3+
+        /f//////////////////////////////////////+/37//////9rlGr/THMA/4iXAf8pZB3/9vb1////
+        ///+/v7///////////////////////////////////////r8+v//////jayF/xxdAP8zZgD/Q3sz///+
+        ///9//7//v/////////////////////////////////////////8/fv//////6nCmv8OSBH/DDkv/16Q
+        Qv///////f78//////////////////////////////////3+/v//////tc/f/+jx/v/H07X/EChe/wsX
+        hv9yjm///////6jH2//4+vv////////////////////////////8/f7//////4i72//T5/f/4ODY/xlK
+        Jf8LQhb/jKCQ//////91sdf/8/f6/////////////////////////////P3+//////+Nvdz/k7zc//Hw
+        6P8qbQ//DF0A/7HEpP/b5vr/XZ/K//v8/P////////////////////////////z9/v//////hLja/z6M
+        y//++PX/NG8h/wpVAP/Q1r7/nMTs/zKIxf////3////////////////////////////8/f7//////5HC
+        3/8Uab3/xMbm/1OJM/8UYgD/zNDJ/0h9zf9El83///78/////////////////////////////P3+////
+        //+SxeD/AF/E/1FgtP81T2X/Fz1L/2Foo/8QU8H/RZrP//78+/////////////////////////////z9
+        /v//////lcHa/xxsvv8cL4//FyCG/xwmj/8XIoX/H1m0/0+ZyP/9+/r/////////////////////////
+        //////////////X29//o6+v/+vn//6yyZ/+Hkgb/5OTm/+7w9P/u8fL/////////////////////////
+        //////////////////////7//////+np5P+ttUP/m6cQ//f2+f///////v7+////////////////////
+        /////////////////////////f39///////c3cv/oKg2/7C3X//6+v7///////7+/v//////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

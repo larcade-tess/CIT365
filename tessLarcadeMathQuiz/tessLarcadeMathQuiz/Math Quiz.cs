@@ -42,7 +42,7 @@ namespace tessLarcadeMathQuiz
             //date calculation
 
             DateTime dateToday = DateTime.Now.Date;
-            Today.Text = dateToday.ToString("MM/dd/yyyy");
+            Today.Text = dateToday.ToString("dd MMMM yyyy");
 
             Console.WriteLine("StartTheQuiz");
             //add numerical values to the addition problem.

@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Layout.cshtml";
+    Page.Title = "Delete Scriptures";
+
+    var book = "";
+    var chapter = "";
+    var verse = "";
+    var note = "";
+    var scriptureId = "";
+    DateTime date = DateTime.Now;
+
+
+    if (!IsPost)
+    {
+        if (!Request.QueryString["ID"].IsEmpty() && Request.QueryString["ID"].IsInt())
+        {
+            scriptureId = Request.QueryString["ID"];
+            var db = Database.Open("MyScriptures");
+            var dbCommand = "SELECT * FROM Scriptures WHERE ID = @0";
+            var row = db.QuerySingle(dbCommand, scriptureId);
+            if (row != null)
+            {
+                book = row.Book;
+                chapter = row.Chapter;
+                verse = row.Verse;
+                note = row.Note;
+                date = row.Date;
+            }
+            else
+            {
+                Validation.AddFormError("No scripture was found for that ID.");
+            }
+        }
+        else
+        {
+            Validation.AddFormError("No scripture was found for that ID.");
+        }
+    }
+
+    if (IsPost && !Request["buttonDelete"].IsEmpty())
+    {
+        scriptureId = Request.Form["scriptureId"];
+        var db = Database.Open("MyScriptures");
+        var deleteCommand = "DELETE FROM Scriptures WHERE ID = @0";
+        db.Execute(deleteCommand, scriptureId);
+        Response.Redirect("~/Scriptures");
+    }
+}
+
+
+<h1>Delete a Scripture</h1>
+@Html.ValidationSummary()
+<div class="linkdiv"><a href="~/Scriptures">Return to Scriptures</a></div>
+
+<form method="post">
+    <fieldset>
+        <legend>Scripture Information</legend>
+
+        <div>
+            <p>Book: @book</p>
+        </div>
+
+        <div>
+            <p>Chapter: @chapter</p>
+        </div>
+
+        <div>
+            <p>Verse: @verse</p>
+        </div>
+
+        <div>
+            <p>Note: @note</p>
+        </div>
+
+        <div>
+            <p>Date: @date</p>
+        </div>
+
+        <div>
+            <input type="hidden" name="scriptureId" value="@scriptureId" />
+        </div>
+        
+        <div>
+            <input class ="button" type="submit" name="buttonDelete" value="Delete Scripture" />
+        </div>
+    </fieldset>
+</form>

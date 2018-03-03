@@ -1,0 +1,87 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    margin-left: 40px;
+}
+
+h1, h2 {
+    font-family: 'Karma', serif;
+}
+
+div {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid {
+    background-color: antiquewhite;
+    border: 2px solid gray;
+    width: 1250px;
+}
+
+td {
+    padding-left: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: #004780;
+}
+
+.grid a:hover {
+    color: #000000;
+}
+
+header {
+    padding-left: 40px;
+    padding-top: 20px;
+    color: white;
+    background-color: #004780;
+}
+
+footer {
+    padding-top: 10px;
+    height: 40px;
+    color: white;
+    background-color: #004780;
+    font-size: .8em;
+}
+
+.button {
+    margin-bottom: 30px;
+}
+
+.pagelink {
+    font-weight: 800;
+    padding: 15px;
+    height: 20px;
+    width: 125px;
+}
+
+.linkdiv {
+    padding-bottom: 10px
+}
+
+.input {
+    padding-bottom: 30px
+}
+
+.button {
+    background-color: #004780;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+
+fieldset {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.linkbutton {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}

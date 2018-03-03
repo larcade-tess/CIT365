@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Layout.cshtml";
+    Page.Title = "Add Scriptures";
+
+    var book = "";
+    var chapter = "";
+    var verse = "";
+    var note = "";
+
+
+    if (IsPost)
+    {
+        book = Request.Form["addB"];
+        chapter = Request.Form["addC"];
+        verse = Request.Form["addV"];
+        note = Request.Form["addN"];
+        var tday = DateTime.Now;
+
+        var db = Database.Open("MyScriptures");
+        var insertS = "INSERT INTO Scriptures (Book, Chapter, Verse, Note, Date) VALUES(@0, @1, @2, @3, @4)";
+        db.Execute(insertS, book, chapter, verse, note, tday);
+        Response.Redirect("~/Scriptures");
+    }
+}
+    <h2>Scriptures</h2>
+    <div class="linkdiv"><a href="~/Scriptures">Return to Scriptures</a></div>
+    <form method="post">
+        <div class="input">
+            <label for="addB">Book:</label>
+            <input type="text" name="addB" value="@Request.QueryString["addB"]" />
+            <br />
+        </div>
+        <div class="input">
+            <label for="addC">Chapter:</label>
+            <input type="text" name="addC" value="@Request.QueryString["addC"]" />
+            <br />
+        </div>
+        <div class="input">
+            <label for="addV">Verse:</label>
+            <input type="text" name="addV" value="@Request.QueryString["addV"]" />
+            <br />
+        </div>
+        <div class="input">
+            <label for="addN">Note:</label>
+            <textarea rows="4" cols="50" name="addN" value="@Request.QueryString["addN"]"></textarea>
+            <br />
+        </div>
+        <div>
+            <input class ="button" type="submit" name="buttonSubmit" value="Add Scripture" />
+        </div>
+    </form>
+

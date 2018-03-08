@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MegaDeskWeb", "MegaDeskWeb\", "{CBEB670B-5DB2-4B00-82D8-FD88C1568648}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51502"
+		Debug.AspNetCompiler.PhysicalPath = "MegaDeskWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51502\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51502"
+		Release.AspNetCompiler.PhysicalPath = "MegaDeskWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51502\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51502"
+		SlnRelativePath = "MegaDeskWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBEB670B-5DB2-4B00-82D8-FD88C1568648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEB670B-5DB2-4B00-82D8-FD88C1568648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15412079-3E7C-4B03-9310-1FF47D331DE0}
+	EndGlobalSection
+EndGlobal

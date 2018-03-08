@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Layout.cshtml";
+    Page.Title = "Add Quote";
+}
+<form method="get">
+    <div>
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" value="@Request.QueryString["fname"]" />
+
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" value="@Request.QueryString["lname"]" />
+
+        <label for="width">Width:</label>
+        <input type="text" name="width" value="@Request.QueryString["width"]" />
+
+        <label for="depth">Depth:</label>
+        <input type="text" name="depth" value="@Request.QueryString["depth"]" />
+
+        <label for="desktop">Desktop Material:</label>
+        <select name="desktop">
+            <option>Oak</option>
+            <option>Laminate</option>
+            <option>Pine</option>
+            <option>Rosewood</option>
+            <option>Veneer</option>
+        </select>
+
+        <label for="rush">Rush Days:</label>
+        <select name="rush">
+            <option>0</option>
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select>
+        <input class="button" type="Submit" value="Add" />
+    </div>
+</form>

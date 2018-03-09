@@ -1,21 +1,117 @@
 ﻿body {
+    background-image: url('dark_wood.png');
+    background-repeat: repeat;
+    margin: 0px;
 }
+
+main {
+    background-color: #d8d8d8;
+    max-height: 1000px;
+    min-height: 200px;
+    padding-top: 30px;
+}
+
 .validation-summary-errors {
-    border: 2px solid red;
     color: red;
     font-weight: bold;
-    margin: 6px;
-    width: 30%;
 }
 
 .field-validation-error {
     color: red;
     font-weight: bold;
-    background-color: yellow;
 }
 
 .input-validation-error {
     color: red;
     font-weight: bold;
-    background-color: pink;
+}
+
+.button {
+    background-color: #25941ee6;
+    border: none;
+    color: white;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+#button {
+    background-color: #25941ee6;
+    border: none;
+    color: white;
+    padding: 5px 106px;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #25941ee6;
+}
+
+.mainbody {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.viewbody {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+.addbody {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.searchbody {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+.searchform {
+    width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #ffad33e0;
+    padding-left: 30px;
+    font-size: 2.5em;
+}
+
+h2 {
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+footer {
+    padding-top: 10px;
+    padding-left: 30px;
+    color: #ffad33e0;
+}
+
+.input {
+    margin-bottom: 30px
+}
+
+form {
+    width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: 10px;
+}
+
+.link {
+    padding: 30px;
+    font-size: 1.2em;
+    font-weight: 700;
 }

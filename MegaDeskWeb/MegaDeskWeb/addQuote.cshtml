@@ -13,7 +13,7 @@
     Validation.RequireField("name", "Name is required");
     Validation.RequireField("width", "Width is required");
     Validation.RequireField("depth", "Depth is required");
-    Validation.RequireField("drawers", "A number is required");
+    Validation.RequireField("drawers", "Drawers is required");
     Validation.Add("width", Validator.Range(24, 96, "Width must be between 24 and 96"));
     Validation.Add("depth", Validator.Range(12, 48, "Depth must be between 12 and 48"));
     Validation.Add("drawer", Validator.Range(0, 7, "Drawers must be between 0 and 7"));
@@ -42,40 +42,47 @@
         var insertS = "INSERT INTO quotes (name, width, depth, date, drawers, material, rush, total) VALUES(@0, @1, @2, @3, @4, @5, @6, @7)";
         db.Execute(insertS, name, widthI, depthI, tday, drawersI, desktop, rushdaysI, QuoteAmount);
 
-        Response.Redirect("~/index");
+        Response.Redirect("~/viewAll.cshtml");
     }
 }
+<h2>Add Quote</h2>
+<div class="addbody">
 <form method="post">
     <div>
+        @Html.ValidationSummary()
         <label for="name">Name:</label>
-        <input type="text" name="name" value="@Request.QueryString["name"]" />
-        @Html.ValidationMessage("name")
+        <input class="input" type="text" name="name" value="@Request.QueryString["name"]" />
+        <br />
         <label for="width">Width:</label>
-        <input type="text" name="width" value="@Request.QueryString["width"]" />
-        @Html.ValidationMessage("width")
+        <input class="input" type="text" name="width" value="@Request.QueryString["width"]" />
+        <br />
         <label for="depth">Depth:</label>
-        <input type="text" name="depth" value="@Request.QueryString["depth"]" />
-        @Html.ValidationMessage("depth")
+        <input class="input" type="text" name="depth" value="@Request.QueryString["depth"]" />
+        <br />
         <label for="drawers">Drawers:</label>
-        <input type="text" name="drawers" value="@Request.QueryString["drawers"]" />
-        @Html.ValidationMessage("drawers")
+        <input class="input" type="text" name="drawers" value="@Request.QueryString["drawers"]" />
+        <br />
+
         <label for="desktop">Desktop Material:</label>
-        <select name="desktop" value="@Request.QueryString["desktop"]">
+        <select class="input" type="dropdown" name="desktop" value="@Request.QueryString["desktop"]">
             <option>Oak</option>
             <option>Laminate</option>
             <option>Pine</option>
             <option>Rosewood</option>
             <option>Veneer</option>
         </select>
+        <br />
 
         <label for="rush">Rush Days:</label>
-        <select name="rush" value="@Request.QueryString["rush"]">
+        <select class="input" type="dropdown" name="rush" value="@Request.QueryString["rush"]">
             <option>0</option>
             <option>3</option>
             <option>5</option>
             <option>7</option>
         </select>
-        <input class="button" type="Submit" value="Add" />
+        <br />
+        <input id="button" type="Submit" value="Add" />
     </div>
-
 </form>
+</div>
+<a href="~/index.cshtml" class="link">Back</a>

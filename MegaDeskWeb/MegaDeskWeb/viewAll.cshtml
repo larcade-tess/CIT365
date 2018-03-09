@@ -1,4 +1,72 @@
 ﻿@{
     Layout = "~/Layout.cshtml";
     Page.Title = "View All";
+
+    var db = Database.Open("MegaDesk");
+    var searchN = "";
+    var searchT = "";
+    var selectData = "SELECT * FROM quotes";
+    var grid = new WebGrid(defaultSort: "Name", rowsPerPage: 5);
+    if (!Request.QueryString["searchN"].IsEmpty() && Request.QueryString["searchT"].IsEmpty())
+    {
+        selectData = "SELECT * FROM quotes WHERE name LIKE @0";
+        searchN = "%" + Request["searchN"] + "%";
+        var data = db.Query(selectData, searchN);
+        grid = new WebGrid(source: data, defaultSort: "Name", rowsPerPage: 5);
+    }
+    else if (!Request.QueryString["searchT"].IsEmpty() && Request.QueryString["searchN"].IsEmpty())
+    {
+        selectData = "SELECT * FROM quotes WHERE total = @0";
+        searchT = Request.QueryString["searchT"];
+        var data = db.Query(selectData, searchT);
+        grid = new WebGrid(source: data, defaultSort: "Name", rowsPerPage: 5);
+    }
+    else if (!Request.QueryString["searchB"].IsEmpty() && !Request.QueryString["searchK"].IsEmpty())
+    {
+        selectData = "SELECT * FROM quotes WHERE total = @0 AND name LIKE @1";
+        searchT = Request.QueryString["searchT"];
+        searchN = "%" + Request["searchN"] + "%";
+        var data = db.Query(selectData, searchT, searchN);
+        grid = new WebGrid(source: data, defaultSort: "Name", rowsPerPage: 5);
+    }
+    else
+    {
+        var data = db.Query(selectData);
+        grid = new WebGrid(source: data, defaultSort: "Name", rowsPerPage: 5);
+    }
 }
+
+
+<form method="get">
+    <div>
+        <label>Search by Name:</label>
+        <input type="text" name="searchN" value="@Request.QueryString["searchN"]" />
+        <input class="button" type="Submit" value="Search Name" />
+    </div>
+    <div>
+        <label>Search by Total:</label>
+        <input type="text" name="searchT" value="@Request.QueryString["searchT"]" />
+        <input class="button" type="Submit" value="Search Total" />
+    </div>
+</form>
+
+<div>
+    @grid.GetHtml(
+                    tableStyle: "grid",
+                    headerStyle: "head",
+                    columns: grid.Columns(
+                        grid.Column(format:@<a href="~/editQuote?id=@item.ID">Edit</a>),
+                                                        grid.Column("Id", canSort: false),
+                                                        grid.Column("Name", canSort: true),
+                                                        grid.Column("Date", canSort: false),
+                                                        grid.Column("Width", canSort: false),
+                                                        grid.Column("Depth", canSort: false),
+                                                        grid.Column("Drawers", canSort: false),
+                                                        grid.Column("Material", canSort: false),
+                                                        grid.Column("Rush", canSort: true),
+                                                        grid.Column("Total", canSort: true),
+                                                        grid.Column(format: @<a href="~/deleteQuote?id=@item.ID">Delete</a>)
+                                                                                                          ),
+                                                                                    footerStyle: "links"
+                                                                                                  )
+</div>

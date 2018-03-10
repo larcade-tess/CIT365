@@ -1,1 +1,133 @@
-﻿<a href="~/index.cshtml" class="link">Back</a>
+﻿@{
+    Layout = "~/Layout.cshtml";
+    Page.Title = "Edit Quote";
+
+
+    var name = "";
+    var width = "";
+    var depth = "";
+    var drawers = "";
+    string desktop = "";
+    var rushdays = "";
+    var total = "";
+    DateTime tday = DateTime.Now;
+    var quoteId = "";
+
+    if (!IsPost)
+    {
+        if (!Request.QueryString["id"].IsEmpty() && Request.QueryString["id"].IsInt())
+        {
+
+            quoteId = Request.QueryString["id"];
+            var db = Database.Open("MegaDesk");
+            var dbCommand = "SELECT * FROM quotes WHERE Id = @0";
+            var row = db.QuerySingle(dbCommand, quoteId);
+            if (row != null)
+            {
+                name = row.name;
+                width = row.width.ToString();
+                depth = row.depth.ToString();
+                tday = row.date;
+                drawers = row.drawers.ToString();
+                desktop = row.material;
+                rushdays = row.rush.ToString();
+                total = row.total.ToString();
+            }
+            else
+            {
+                Validation.AddFormError("No scripture was found for that ID.");
+            }
+        }
+        else
+        {
+            Validation.AddFormError("No scripture was selected.");
+        }
+
+    }
+
+    if (IsPost)
+    {
+        Validation.RequireField("name", "Name is required");
+        Validation.RequireField("width", "Width is required");
+        Validation.RequireField("depth", "Depth is required");
+        Validation.RequireField("drawers", "Drawers is required");
+        Validation.Add("width", Validator.Range(24, 96, "Width must be between 24 and 96"));
+        Validation.Add("depth", Validator.Range(12, 48, "Depth must be between 12 and 48"));
+        Validation.Add("drawer", Validator.Range(0, 7, "Drawers must be between 0 and 7"));
+
+
+        if (Validation.IsValid())
+        {
+
+            name = Request.Form["name"];
+            width = Request.Form["width"];
+            depth = Request.Form["depth"];
+            drawers = Request.Form["drawers"];
+            desktop = Request.Form["desktop"];
+            rushdays = Request.Form["rush"];
+            total = Request.Form["total"];
+            quoteId = Request.Form["quoteId"];
+
+            int widthI = Convert.ToInt32(width);
+            int depthI = Convert.ToInt32(depth);
+            int drawersI = Convert.ToInt32(drawers);
+            int rushdaysI = Convert.ToInt32(rushdays);
+
+            CalcQuote.DeskQuote newQuote = new CalcQuote.DeskQuote(Convert.ToInt32(width), Convert.ToInt32(depth), Convert.ToInt32(drawers), desktop, Convert.ToInt32(rushdays));
+
+            DateTime QuoteDate = newQuote.QuoteDate;
+            int QuoteAmount = newQuote.quoteTotal();
+
+            var db = Database.Open("MegaDesk");
+            var update = "UPDATE quotes SET name=@0, width=@1, depth=@2, date=@3, drawers=@4, material=@5, rush=@6, total=@7 WHERE Id=@8";
+            db.Execute (update, name, widthI, depthI, tday, drawersI, desktop, rushdaysI, QuoteAmount, quoteId);
+            Response.Redirect("~/viewAll");
+        }
+    }
+}
+
+<h2>Edit a Quote</h2>
+@Html.ValidationSummary()
+<form method="post">
+    <fieldset>
+        <legend>Edit Quote</legend>
+        <label for="name">Name:</label>
+        <input class="input" type="text" name="name" value="@name" />
+        <br />
+        <label for="width">Width:</label>
+        <input class="input" type="text" name="width" value="@width" />
+        <br />
+        <label for="depth">Depth:</label>
+        <input class="input" type="text" name="depth" value="@depth" />
+        <br />
+        <label for="drawers">Drawers:</label>
+        <input class="input" type="text" name="drawers" value="@drawers" />
+        <br />
+
+        <label for="desktop">Desktop Material:</label>
+        <select class="input" type="dropdown" name="desktop" value="@desktop">
+            <option>Oak</option>
+            <option>Laminate</option>
+            <option>Pine</option>
+            <option>Rosewood</option>
+            <option>Veneer</option>
+        </select>
+        <br />
+
+        <label for="rush">Rush Days:</label>
+        <select class="input" type="dropdown" name="rush" value="@rushdays">
+            <option>0</option>
+            <option>3</option>
+            <option>5</option>
+            <option>7</option>
+        </select>
+        <br />
+
+        <div>
+            <input type="hidden" name="quoteId" value="@quoteId" />
+        </div>
+
+        <input class="button" type="submit" name="buttonSubmit" value="Submit Changes" />
+    </fieldset>
+</form>
+

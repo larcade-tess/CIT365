@@ -36,16 +36,16 @@
     }
 }
 
-
+<h2>Search Quotes</h2>
 <form class ="search" method="get">
     <div>
         <label>Search Name:</label>
         <input class="input" type="text" name="searchN" value="@Request.QueryString["searchN"]" />
-        <input class="button" type="Submit" value="Search Name" />
+        <input class="button" type="Submit" value="Search" />
         <br />
         <label>Search Total:</label>
         <input class="input" type="text" name="searchT" value="@Request.QueryString["searchT"]" />
-        <input class="button" type="Submit" value="Search Total" />
+        <input class="button" type="Submit" value="Search" />
     </div>
 </form>
 
@@ -57,7 +57,7 @@
                                 columns: grid.Columns(
                                                                             grid.Column("Id", canSort: false),
                                                                             grid.Column("Name", canSort: true),
-                                                                            grid.Column("Date", canSort: false),
+                                                                            grid.Column("Date", canSort: true),
                                                                             grid.Column("Width", canSort: false),
                                                                             grid.Column("Depth", canSort: false),
                                                                             grid.Column("Drawers", canSort: false),
@@ -68,4 +68,3 @@
                                                                                                                               )
     </div>
 </div>
-<a href="~/index.cshtml" class="link">Back</a>

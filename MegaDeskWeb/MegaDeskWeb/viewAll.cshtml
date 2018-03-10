@@ -8,24 +8,24 @@
     var grid = new WebGrid(source: data, defaultSort: "Name", rowsPerPage: 10);
 }
 
+<h2>View All Quotes</h2>
 <div class="viewbody">
     @grid.GetHtml(
                     tableStyle: "grid",
                     headerStyle: "head",
                     columns: grid.Columns(
-                        grid.Column(format:@<a href="~/editQuote?id=@item.ID">Edit</a>),
+                        grid.Column(format:@<a href="~/editQuote?id=@item.ID"><img src="~/Styles/edit.png" id="changebutton" /></a>),
                                                         grid.Column("Id", canSort: false),
                                                         grid.Column("Name", canSort: true),
-                                                        grid.Column("Date", canSort: false),
+                                                        grid.Column("Date", canSort: true),
                                                         grid.Column("Width", canSort: false),
                                                         grid.Column("Depth", canSort: false),
                                                         grid.Column("Drawers", canSort: false),
                                                         grid.Column("Material", canSort: false),
                                                         grid.Column("Rush", canSort: true),
                                                         grid.Column("Total", canSort: true),
-                                                        grid.Column(format: @<a href="~/deleteQuote?id=@item.ID">Delete</a>)
+                                                        grid.Column(format: @<a href="~/deleteQuote?id=@item.ID"><img src="~/Styles/delete.png" id="changebutton"/></a>)
                                                                                                           ),
                                                                                     footerStyle: "links"
                                                                                                   )
 </div>
-<a href="~/index.cshtml" class="link">Back</a>

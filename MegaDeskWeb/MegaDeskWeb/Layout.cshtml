@@ -7,7 +7,18 @@
     <link href="https://fonts.googleapis.com/css?family=Karma|Montserrat" rel="stylesheet">
 </head>
 <body>
-    <header><h1>MegaDesk</h1></header>
+
+    <header>
+        <h1>MegaDesk</h1>
+        <nav>
+            <ul>
+                <li><a href="~/index.cshtml">Main Menu</a></li>
+                <li><a href="~/viewAll.cshtml">View All Quotes</a></li>
+                <li><a href="~/addQuote.cshtml">Add Quote</a></li>
+                <li><a href="~/searchQuote.cshtml">Search Quote</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
             @RenderBody()
     </main>

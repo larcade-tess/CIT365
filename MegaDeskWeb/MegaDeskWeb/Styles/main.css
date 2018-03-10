@@ -104,6 +104,7 @@ form {
     width: 410px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 30px;
 }
 
 td {
@@ -114,4 +115,35 @@ td {
     padding: 30px;
     font-size: 1.2em;
     font-weight: 700;
+}
+
+#changebutton {
+    width: auto;
+    height: 25px;
+}
+
+nav {
+    background-color: #ffad33e0;
+}
+
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2em;
+        padding: 15px;
+        font-family: serif;
+    }
+
+a:hover {
+    color: gray;
+}
+
+ul {
+    padding: 5px 30px;
+    margin: 0px;
+}
+
+li {
+    list-style: none;
+    display: inline;
 }

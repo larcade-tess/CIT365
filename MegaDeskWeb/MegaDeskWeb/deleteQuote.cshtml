@@ -1,1 +1,103 @@
-﻿<a href="~/index.cshtml" class="link">Back</a>
+﻿@{
+    Layout = "~/Layout.cshtml";
+    Page.Title = "Delete Quote";
+
+    var name = "";
+    int width = 0;
+    int depth = 0;
+    int drawers = 0;
+    string desktop = "";
+    int rushdays = 0;
+    int total = 0;
+    DateTime tday = DateTime.Now;
+    var quoteId = "";
+
+
+    if (!IsPost)
+    {
+        if (!Request.QueryString["ID"].IsEmpty() && Request.QueryString["ID"].IsInt())
+        {
+            quoteId = Request.QueryString["ID"];
+            var db = Database.Open("MegaDesk");
+            var dbCommand = "SELECT * FROM quotes WHERE ID = @0";
+            var row = db.QuerySingle(dbCommand, quoteId);
+            if (row != null)
+            {
+                name = row.name;
+                width = row.width;
+                depth = row.depth;
+                tday = row.date;
+                drawers = row.drawers;
+                desktop = row.material;
+                rushdays = row.rush;
+                total = row.total;
+            }
+            else
+            {
+                Validation.AddFormError("No quote was found for that ID.");
+            }
+        }
+        else
+        {
+            Validation.AddFormError("No quote was found for that ID.");
+        }
+    }
+
+    if (IsPost && !Request["buttonDelete"].IsEmpty())
+    {
+        quoteId = Request.Form["quoteId"];
+        var db = Database.Open("MegaDesk");
+        var deleteCommand = "DELETE FROM quotes WHERE ID = @0";
+        db.Execute(deleteCommand, quoteId);
+        Response.Redirect("~/viewAll");
+    }
+}
+
+
+<h2>Delete a Quote</h2>
+@Html.ValidationSummary()
+
+<form method="post">
+    <fieldset>
+        <legend>Quote Details</legend>
+
+        <div>
+            <p>Name: @name</p>
+        </div>
+
+        <div>
+            <p>Width: @width</p>
+        </div>
+
+        <div>
+            <p>Depth: @depth</p>
+        </div>
+
+        <div>
+            <p>Date: @tday</p>
+        </div>
+
+        <div>
+            <p>Drawers: @drawers</p>
+        </div>
+
+        <div>
+            <p>Material: @desktop</p>
+        </div>
+
+        <div>
+            <p>Rush: @rushdays</p>
+        </div>
+        <div>
+            <p>Total: @total</p>
+        </div>
+
+        <div>
+            <input type="hidden" name="quoteId" value="@quoteId" />
+        </div>
+
+        <div>
+            <input class="button" type="submit" name="buttonDelete" value="Delete Quote" />
+        </div>
+    </fieldset>
+</form>
